@@ -1,0 +1,18 @@
+{
+    "name": "dlepera88-php/checkout-dlx",
+    "version": "1.0.0",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "CheckoutDLX\\":  "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "CheckoutDLX\\Tests\\": "tests"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7.5"
+    }
+}
