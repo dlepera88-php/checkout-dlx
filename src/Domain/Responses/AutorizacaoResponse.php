@@ -91,7 +91,7 @@ class AutorizacaoResponse
     /**
      * @return mixed|null
      */
-    public function getCodigoAutorizacao(): ?mixed
+    public function getCodigoAutorizacao()
     {
         return $this->codigo_autorizacao;
     }
@@ -99,7 +99,7 @@ class AutorizacaoResponse
     /**
      * @return mixed|null
      */
-    public function getReferencia(): ?mixed
+    public function getReferencia()
     {
         return $this->referencia;
     }
@@ -107,7 +107,7 @@ class AutorizacaoResponse
     /**
      * @return mixed|null
      */
-    public function getTransacaoId(): ?mixed
+    public function getTransacaoId()
     {
         return $this->transacao_id;
     }
