@@ -1,6 +1,6 @@
 {
     "name": "dlepera88-php/checkout-dlx",
-    "version": "1.0.0",
+    "version": "1.0-alpha",
     "license": "MIT",
     "autoload": {
         "psr-4": {
