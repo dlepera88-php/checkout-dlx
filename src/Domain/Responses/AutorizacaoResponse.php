@@ -32,36 +32,45 @@ use DateTime;
 
 class AutorizacaoResponse
 {
-    /** @var mixed */
-    private $codigo_autorizacao;
-    /** @var mixed */
-    private $referencia;
-    /** @var mixed */
-    private $transacao_id;
-    /** @var int */
-    private $sequencial;
-    /** @var DateTime */
-    private $data;
-    /** @var float */
-    private $valor;
-    /** @var Cartao */
-    private $cartao;
     /** @var Retorno */
     private $retorno;
+    /** @var mixed|null */
+    private $codigo_autorizacao;
+    /** @var mixed|null */
+    private $referencia;
+    /** @var mixed|null */
+    private $transacao_id;
+    /** @var int|null */
+    private $sequencial;
+    /** @var DateTime|null */
+    private $data;
+    /** @var float|null */
+    private $valor;
+    /** @var Cartao|null */
+    private $cartao;
 
     /**
-     * Autorizacao constructor.
-     * @param mixed $codigo_autorizacao
-     * @param mixed $referencia
-     * @param mixed $transacao_id
-     * @param int $sequencial
-     * @param DateTime $data
-     * @param float $valor
-     * @param Cartao $cartao
+     * AutorizacaoResponse constructor.
      * @param Retorno $retorno
+     * @param null $codigo_autorizacao
+     * @param null $referencia
+     * @param null $transacao_id
+     * @param int|null $sequencial
+     * @param DateTime|null $data
+     * @param float|null $valor
+     * @param Cartao|null $cartao
      */
-    public function __construct($codigo_autorizacao, $referencia, $transacao_id, int $sequencial, DateTime $data, float $valor, Cartao $cartao, Retorno $retorno)
-    {
+    public function __construct(
+        Retorno $retorno,
+        ?$codigo_autorizacao = null,
+        ?$referencia = null,
+        ?$transacao_id = null,
+        ?int $sequencial = null,
+        ?DateTime $data = null,
+        ?float $valor = null,
+        ?Cartao $cartao = null
+    ) {
+        $this->retorno = $retorno;
         $this->codigo_autorizacao = $codigo_autorizacao;
         $this->referencia = $referencia;
         $this->transacao_id = $transacao_id;
@@ -69,63 +78,6 @@ class AutorizacaoResponse
         $this->data = $data;
         $this->valor = $valor;
         $this->cartao = $cartao;
-        $this->retorno = $retorno;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getCodigoAutorizacao()
-    {
-        return $this->codigo_autorizacao;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getReferencia()
-    {
-        return $this->referencia;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getTransacaoId()
-    {
-        return $this->transacao_id;
-    }
-
-    /**
-     * @return int
-     */
-    public function getSequencial(): int
-    {
-        return $this->sequencial;
-    }
-
-    /**
-     * @return DateTime
-     */
-    public function getData(): DateTime
-    {
-        return $this->data;
-    }
-
-    /**
-     * @return float
-     */
-    public function getValor(): float
-    {
-        return $this->valor;
-    }
-
-    /**
-     * @return Cartao
-     */
-    public function getCartao(): Cartao
-    {
-        return $this->cartao;
     }
 
     /**
@@ -134,5 +86,61 @@ class AutorizacaoResponse
     public function getRetorno(): Retorno
     {
         return $this->retorno;
+    }
+
+    /**
+     * @return mixed|null
+     */
+    public function getCodigoAutorizacao(): ?mixed
+    {
+        return $this->codigo_autorizacao;
+    }
+
+    /**
+     * @return mixed|null
+     */
+    public function getReferencia(): ?mixed
+    {
+        return $this->referencia;
+    }
+
+    /**
+     * @return mixed|null
+     */
+    public function getTransacaoId(): ?mixed
+    {
+        return $this->transacao_id;
+    }
+
+    /**
+     * @return int|null
+     */
+    public function getSequencial(): ?int
+    {
+        return $this->sequencial;
+    }
+
+    /**
+     * @return DateTime|null
+     */
+    public function getData(): ?DateTime
+    {
+        return $this->data;
+    }
+
+    /**
+     * @return float|null
+     */
+    public function getValor(): ?float
+    {
+        return $this->valor;
+    }
+
+    /**
+     * @return Cartao|null
+     */
+    public function getCartao(): ?Cartao
+    {
+        return $this->cartao;
     }
 }
