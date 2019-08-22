@@ -25,28 +25,22 @@
 
 namespace CheckoutDLX\Domain\Responses;
 
-use CheckoutDLX\Domain\Responses\ValueObjects\Cartao;
-
 class ConsultaResponse
 {
     /** @var AutorizacaoResponse */
     private $autorizacao;
     /** @var CapturaResponse */
     private $captura;
-    /** @var Cartao */
-    private $cartao;
 
     /**
      * ConsultaResponse constructor.
      * @param AutorizacaoResponse $autorizacao
      * @param CapturaResponse $captura
-     * @param Cartao $cartao
      */
-    public function __construct(AutorizacaoResponse $autorizacao, CapturaResponse $captura, Cartao $cartao)
+    public function __construct(AutorizacaoResponse $autorizacao, CapturaResponse $captura)
     {
         $this->autorizacao = $autorizacao;
         $this->captura = $captura;
-        $this->cartao = $cartao;
     }
 
     /**
@@ -63,13 +57,5 @@ class ConsultaResponse
     public function getCaptura(): CapturaResponse
     {
         return $this->captura;
-    }
-
-    /**
-     * @return Cartao
-     */
-    public function getCartao(): Cartao
-    {
-        return $this->cartao;
     }
 }
