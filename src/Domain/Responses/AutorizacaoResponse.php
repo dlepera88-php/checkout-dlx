@@ -62,9 +62,9 @@ class AutorizacaoResponse
      */
     public function __construct(
         Retorno $retorno,
-        ?$codigo_autorizacao = null,
-        ?$referencia = null,
-        ?$transacao_id = null,
+        $codigo_autorizacao = null,
+        $referencia = null,
+        $transacao_id = null,
         ?int $sequencial = null,
         ?DateTime $data = null,
         ?float $valor = null,
