@@ -29,15 +29,15 @@ class ConsultaResponse
 {
     /** @var AutorizacaoResponse */
     private $autorizacao;
-    /** @var CapturaResponse */
+    /** @var CapturaResponse|null */
     private $captura;
 
     /**
      * ConsultaResponse constructor.
      * @param AutorizacaoResponse $autorizacao
-     * @param CapturaResponse $captura
+     * @param CapturaResponse|null $captura
      */
-    public function __construct(AutorizacaoResponse $autorizacao, CapturaResponse $captura)
+    public function __construct(AutorizacaoResponse $autorizacao, ?CapturaResponse $captura)
     {
         $this->autorizacao = $autorizacao;
         $this->captura = $captura;
@@ -52,9 +52,9 @@ class ConsultaResponse
     }
 
     /**
-     * @return CapturaResponse
+     * @return CapturaResponse|null
      */
-    public function getCaptura(): CapturaResponse
+    public function getCaptura(): ?CapturaResponse
     {
         return $this->captura;
     }
