@@ -38,6 +38,12 @@ use CheckoutDLX\Domain\Responses\ConsultaResponse;
 interface GatewayPagamentoInterface
 {
     /**
+     * Nome do serviço
+     * @return string|null
+     */
+    public function getNomeServico(): ?string;
+
+    /**
      * Enviar requisição de autorização para o gateway de pagamento.
      * @param AutorizacaoRequest $request
      * @return AutorizacaoResponse
